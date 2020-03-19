@@ -16,16 +16,16 @@ const Header = styled.div`
   background:darkgrey;
 `;
 
-
 const SpaceCard = (props) => {
   console.log(props);
+
 
   return(
     <SpaceBorder>
     <Card  body inverse color="info">
     <Header><CardHeader tag="h3">{props.title}</CardHeader></Header>
-      <CardBody>Description: {props.explanation}</CardBody>
-      <CardText>Date: {props.date}</CardText>
+      <CardBody><h4>Description:</h4> {props.explanation}</CardBody>
+      <CardText><h6>Date:</h6> {props.date}</CardText>
         <CardImg className="nasa-image" alt="nasa photo" src={props.url}/>
     </Card>
     </SpaceBorder>
