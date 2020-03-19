@@ -1,19 +1,37 @@
 import React from "react";
+import {
+  Card, CardHeader, CardText, CardBody,
+  CardTitle, CardSubtitle, Badge, Col, CardImg
+} from 'reactstrap';
+import styled from "styled-components";
 
-const Card = (props) => {
+
+const SpaceBorder = styled.div`
+  color: grey;
+  margin: 2% 15%;
+  align-items: center;
+`;
+
+const Header = styled.div`
+  background:darkgrey;
+`;
+
+
+const SpaceCard = (props) => {
   console.log(props);
 
   return(
-    <div className="Picture-List">
-      <h2>Title: {props.title}</h2>
-      <p>Description: {props.explanation}</p>
-      <p>Date: {props.date}</p>
-      <div className="bottomImage">
-        <img className="nasa-image" alt="nasa photo" src={props.url}/>
-      </div>
-    </div>
+    <SpaceBorder>
+    <Card  body inverse color="info">
+    <Header><CardHeader tag="h3">{props.title}</CardHeader></Header>
+      <CardBody>Description: {props.explanation}</CardBody>
+      <CardText>Date: {props.date}</CardText>
+        <CardImg className="nasa-image" alt="nasa photo" src={props.url}/>
+    </Card>
+    </SpaceBorder>
 
   );
 };
 
-export default Card;
+export default SpaceCard;
+
